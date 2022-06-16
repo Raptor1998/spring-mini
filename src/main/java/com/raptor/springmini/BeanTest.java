@@ -20,11 +20,7 @@ public class BeanTest {
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 3.第一次获取 bean
-        UserService userService = (UserService) beanFactory.getBean("userService");
-        userService.sayHello();
-
-        // 4.第二次获取 bean from Singleton
-        UserService userService_singleton = (UserService) beanFactory.getSingleton("userService");
-        userService_singleton.sayHello();
+        UserService userService = (UserService) beanFactory.getBean("userService","raptor");
+        System.out.println(userService);
     }
 }

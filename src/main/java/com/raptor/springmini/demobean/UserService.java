@@ -11,11 +11,22 @@ public class UserService {
 
     private String username;
 
+    public UserService() {
+    }
+
     public UserService(String username) {
         this.username = username;
     }
 
     public void sayHello(){
         System.out.println("[UserService] say hello !");
+    }
+
+
+    @Override
+    public String toString() {
+        return "UserService{" +
+                "username='" + username + '\'' +
+                '}';
     }
 }

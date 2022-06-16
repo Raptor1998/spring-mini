@@ -1,5 +1,7 @@
 package com.raptor.springmini.beans.factory;
 
+import com.raptor.springmini.beans.factory.exception.BeansException;
+
 /**
  * @author 陈文豪(chenwenhao.0401 @ bytedance.com)
  * @version 1.0
@@ -14,4 +16,7 @@ public interface BeanFactory {
      * @return
      */
     Object getBean(String beanName);
+
+    Object getBean(String name, Object... args) throws BeansException;
+
 }
