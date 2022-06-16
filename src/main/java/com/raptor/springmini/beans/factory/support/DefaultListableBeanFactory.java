@@ -11,6 +11,7 @@ import java.util.Map;
  * @version 1.0
  * @date 2022/6/16 14:34
  * @description
+ * 最终 DefaultListableBeanFactory 还会继承抽象类 AbstractAutowireCapableBeanFactory 也就可以调用抽象类中的 createBean 方法了。
  */
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
     private final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();

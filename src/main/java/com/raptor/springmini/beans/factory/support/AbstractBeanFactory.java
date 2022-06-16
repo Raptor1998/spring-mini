@@ -9,6 +9,12 @@ import com.raptor.springmini.beans.factory.exception.BeansException;
  * @version 1.0
  * @date 2022/6/14 10:56
  * @description
+ * AbstractBeanFactory 又继承了实现了 SingletonBeanRegistry 的DefaultSingletonBeanRegistry 类。这样 AbstractBeanFactory 抽象类就具备了单例 Bean 的注册功能。
+ *
+ * AbstractBeanFactory 中又定义了两个抽象方法：
+ * getBeanDefinition(String beanName)、
+ * createBean(String beanName, BeanDefinition beanDefinition) ，
+ * 而这两个抽象方法分别由 DefaultListableBeanFactory、AbstractAutowireCapableBeanFactory 实现。
  */
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
     public Object getBean(String beanName) {
