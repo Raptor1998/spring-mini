@@ -7,6 +7,14 @@ package com.raptor.springmini.demobean;
  * @description
  */
 public class UserService {
+
+
+    private String username;
+
+    public UserService(String username) {
+        this.username = username;
+    }
+
     public void sayHello(){
         System.out.println("[UserService] say hello !");
     }
