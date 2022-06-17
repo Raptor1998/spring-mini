@@ -18,6 +18,7 @@ import java.security.interfaces.ECKey;
  * 把入参信息传递给 newInstance 进行实例化。
  */
 public class SimpleInstantiationStrategy implements InstantiationStrategy {
+
     @Override
     public Object instantiate(BeanDefinition beanDefinition, String beanName, Constructor ctor, Object[] args) throws BeansException {
         Class clazz = beanDefinition.getBeanClass();

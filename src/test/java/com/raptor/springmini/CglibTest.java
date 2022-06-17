@@ -1,6 +1,6 @@
 package com.raptor.springmini;
 
-import com.raptor.springmini.demobean.UserService;
+import com.raptor.springmini.service.UserService;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.NoOp;
 import org.junit.Test;
