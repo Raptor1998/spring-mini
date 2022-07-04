@@ -48,4 +48,8 @@ public class BeanTest {
         UserService userService = (UserService) beanFactory.getBean("userService");
         userService.queryUserInfo();
     }
+
+    public void master(){
+        System.out.println("master change ......");
+    }
 }
