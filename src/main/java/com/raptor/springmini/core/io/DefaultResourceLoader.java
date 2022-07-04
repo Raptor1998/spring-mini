@@ -1,0 +1,30 @@
+package com.raptor.springmini.core.io;
+
+import cn.hutool.core.lang.Assert;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+/**
+ * @author 陈文豪(chenwenhao.0401 @ bytedance.com)
+ * @version 1.0
+ * @date 2022/7/4 19:48
+ * @description
+ */
+public class DefaultResourceLoader implements ResourceLoader{
+    @Override
+    public Resource getResource(String location) {
+        Assert.notNull(location, "Location must not be null");
+        if (location.startsWith(CLASSPATH_URL_PREFIX)) {
+            return new ClassPathResource(location.substring(CLASSPATH_URL_PREFIX.length()));
+        }
+        else {
+            try {
+                URL url = new URL(location);
+                return new UrlResource(url);
+            } catch (MalformedURLException e) {
+                return new FileSystemResource(location);
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import com.raptor.springmini.beans.factory.PropertyValues;
 import com.raptor.springmini.beans.factory.config.BeanDefinition;
 import com.raptor.springmini.beans.factory.config.BeanReference;
 import com.raptor.springmini.beans.factory.support.DefaultListableBeanFactory;
+import com.raptor.springmini.beans.factory.xml.XmlBeanDefinitionReader;
 import com.raptor.springmini.dao.UserDao;
 import com.raptor.springmini.service.UserService;
 
@@ -29,6 +30,9 @@ public class BeanTest {
         System.out.println(userService);
          */
 
+        TestXml();
+    }
+    public static void TestAuto(){
         // 1.初始化 BeanFactory
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
@@ -46,6 +50,19 @@ public class BeanTest {
 
         // 5. UserService 获取bean
         UserService userService = (UserService) beanFactory.getBean("userService");
+        userService.queryUserInfo();
+    }
+
+    public static void TestXml(){
+        // 1.初始化 BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        // 2. 读取配置文件&注册Bean
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions("classpath:spring.xml");
+
+        // 3. 获取Bean对象调用方法
+        UserService userService = (UserService) beanFactory.getBean("userService", UserService.class);
         userService.queryUserInfo();
     }
 
