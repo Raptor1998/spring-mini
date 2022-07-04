@@ -16,7 +16,7 @@ public class UserDao {
     static {
         hashMap.put("10001", "raptor");
         hashMap.put("10002", "八杯水");
-        hashMap.put("10003", "spring3333");
+        hashMap.put("10003", "spring2.xml");
     }
 
     public String queryUserName(String uId) {
